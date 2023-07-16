@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="images/icon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="atk total.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Total Attack Calculator</title>
+</head>
+
+<body>
+    <div class="main_frame">
+        <div class="title">
+            Grand Chase
+            <br>
+            Total Attack Calculator
+        </div>
+        <div class="data_enter">
+            Attack:
+            <input type="string" id="Ataque" min="0" onfocusout="atk_total()" />
+            Defense:
+            <input type="string" id="Defesa" min="0" onfocusout="atk_total()" />
+            HP:
+            <input type="string" id="HP" min="0" onfocusout="atk_total()" />
+            Special Attack:
+            <input type="string" id="Ataque_Especial" min="0" onfocusout="atk_total()" />
+            Special Defense:
+            <input type="string" id="Defesa_Especial" min="0" onfocusout="atk_total()" />
+            Critical Rate (%):
+            <input type="string" id="Critico" min="0" onfocusout="atk_total()" />
+            Critical Damage (%):
+            <input type="string" id="Dano_Critico" min="0" onfocusout="atk_total()" />
+            HP recovery (%):
+            <input type="string" id="Recuperar_HP" min="0" onfocusout="atk_total()" />
+            MP recovery (%):
+            <input type="string" id="Recuperar_MP" min="0" onfocusout="atk_total()" />
+        </div>
+
+        <div id="result" class="result">
+            Total Attack: <span class="yellow">0 ± 0</span>
+        </div>
+    </div>
+    <div class="end">
+        <p id="comment0">
+            The value after the ± indicates how much the total attack can vary, either positively or negatively, due to uncertainties. This uncertainty is no more than ~0.009%.
+        </p>
+        <p id="comment1">
+            Calculator by Aresius. For feedback, bug reports, suggestions, data
+            discussion etc you can find me on Discord:
+            <span class="me">aresius4407</span>.
+        </p>
+        <p id="comment2">
+            Check out my other calculators <a class="link_calc"
+                href="https://linktr.ee/thearesius" target="_blank"
+                rel="noopener noreferrer">here</a>.
+        </p>
+    </div>
+
+</body>
+
+</html>
