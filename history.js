@@ -327,21 +327,20 @@ function compareSelected() {
     const generateCells = (valA, valB) => {
         const format = (v) => v.toLocaleString('en-US');
         if (valA > valB) {
-            const diff = valB !== 0 ? ((valA / valB) - 1) * 100 : 100;
-            console.log(valA)
+            const diffPct = valB !== 0 ? ((valA / valB) - 1) * 100 : 100;
+            const diffAbs = valA - valB;
             return {
-                htmlA: `<span class="winner-val">${format(valA)}</span> <span class="diff-badge">▲ ${diff.toFixed(2)}%</span>`,
+                htmlA: `<span class="winner-val">${format(valA)}</span> <span class="diff-badge">▲ ${format(diffAbs)} (${diffPct.toFixed(2)}%)</span>`,
                 htmlB: `<span class="compare-val">${format(valB)}</span>`
             };
         } else if (valB > valA) {
-            const diff = valA !== 0 ? ((valB / valA) - 1) * 100 : 100;
-            console.log(valA)
+            const diffPct = valA !== 0 ? ((valB / valA) - 1) * 100 : 100;
+            const diffAbs = valB - valA;
             return {
                 htmlA: `<span class="compare-val">${format(valA)}</span>`,
-                htmlB: `<span class="winner-val">${format(valB)}</span> <span class="diff-badge">▲ ${diff.toFixed(2)}%</span>`
+                htmlB: `<span class="winner-val">${format(valB)}</span> <span class="diff-badge">▲ ${format(diffAbs)} (${diffPct.toFixed(2)}%)</span>`
             };
         } else {
-            console.log(valA)
             return {
                 htmlA: `<span class="compare-val">${format(valA)}</span>`,
                 htmlB: `<span class="compare-val">${format(valB)}</span>`
@@ -360,7 +359,6 @@ function compareSelected() {
         if (baseA > baseB) { iconA = symUp; iconB = symDown; } 
         else if (baseB > baseA) { iconA = symDown; iconB = symUp; }
 
-        
         const displayA = formatStatValue(id, baseA);
         const displayB = formatStatValue(id, baseB);
 
@@ -412,7 +410,7 @@ function compareSelected() {
                 </tbody>
             </table>
             <div style="margin: 15px; text-align: center; font-size: 0.9em; color: #aaa;">
-                <span class="diff-badge" style="font-size: 12px;">▲ X%</span> Shows how much TA (in percent) the best build has when compared to the other one.
+                <span class="diff-badge" style="font-size: 12px;">▲ X (Y%)</span> Shows the difference (absolute and percentual) the best build has when compared to the other one.
             </div>
         </div>
     `;
