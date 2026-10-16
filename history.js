@@ -482,7 +482,7 @@ function deleteHistoryItem(id) {
             selectedHistoryIds.delete(id);
             saveHistory();
             renderHistory();
-            showToast("Cálculo excluído!");
+            showToast("Result deleted!");
         }
     );
 }
@@ -497,7 +497,7 @@ function editHistoryItem(id) {
                 item.customName = newName;
                 saveHistory();
                 renderHistory();
-                showToast('Nome atualizado!');
+                showToast('Name updated!');
             },
             "ex: Critical Damage Build"
         );

@@ -179,13 +179,13 @@ function TA() {
               + (mp3CD * WEIGHTS.mp3CD)
               + (mp4CD * WEIGHTS.mp4CD);
 
-  var k1 = 130.1936693
-  var k2 = 0.549624
+  var k1 = 130
+  var k2 = 0.55
   var offensive_fix = k1 + offensive * k2 // this term is used to ensure the Offensive part of the stats are the main source of TA increase
   
   var finalResult = (offensive + defensive + support) * offensive_fix;
   var result_out = Math.floor(finalResult).toLocaleString('en-US')
-  var error_out = Math.floor(finalResult * 6e-4)
+  var error_out = Math.floor(finalResult * 3e-4)
 
   var resultElement = document.getElementById("result");
   resultElement.innerHTML = `<div>Total Attack: <span class="yellow">${result_out} ± ${error_out}</span></div>`;
